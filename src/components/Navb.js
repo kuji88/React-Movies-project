@@ -11,9 +11,10 @@ function Navb({search}) {
     }
 
   return (
-    <Navbar bg="dark" expand="lg" variant='dark'>
+    <Navbar bg="dark" expand="lg" variant='dark' >
       <Container fluid>
-        <Navbar.Brand className='ml-12' href="#">Movies</Navbar.Brand>
+        <Navbar.Brand className='ml-2' href="#"><div className='bg-gradient-to-r from-red-600 to-slate-700 w-20 h-12 rounded-md text-center mx-8 items-center justify-center flex '><h3 className=" cursor-pointer text-center m-auto text-2xl font-mono text-white">kuji</h3></div>
+</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
