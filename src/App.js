@@ -24,11 +24,23 @@ function App() {
  getAllMovies()
   
   }, [])
+
+
+  const search= async (word)=>{
+    if(word === ""){
+      getAllMovies()
+    }
+    else{
+    const res= await axios.get(` https://api.themoviedb.org/3/search/movie?api_key=10c7824fcb18333079c100c234ba14b5&language=en-US&query=${word}`)
+    setMovies(res.data.results)}
+  }
+
+  
   
   
   return (
     <div>
-    <Navb/>
+    <Navb search={search}/>
     
     <Row>
     <Movieslist movies={movies}/>

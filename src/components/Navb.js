@@ -4,7 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function Navb() {
+function Navb({search}) {
+
+    const onSearch =(word)=>{
+      search(word)
+    }
+
   return (
     <Navbar bg="dark" expand="lg" variant='dark'>
       <Container fluid>
@@ -25,6 +30,7 @@ function Navb() {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={(e)=> onSearch(e.target.value)}
               
             />
             <Button variant="outline-danger">Search</Button>
