@@ -1,18 +1,21 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function Cardb() {
+function Cardb({mov}) {
   return (
     <div className='mx-auto my-3'>
-    <Card style={{ width: '22rem' }}>
-      <Card.Img variant="top" src="https://m.media-amazon.com/images/M/MV5BOGYxYTY3MzctNjRmMS00NTFhLWJmOGQtNjg0NWUxZDhhM2E2XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg" />
+    <Card style={{ width: '20rem' }}>
+      <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/`+mov.poster_path} />
       <Card.Body>
-        <Card.Title>American hisory X</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title><div className='flex justify-between'>
+        <h4>{mov.title}</h4>
+        <h5 className='text-red-600'>{mov.vote_average}</h5>
+        </div></Card.Title>
+        <Card.Text >
+          <p className='max-h-fit text-gray-600'>{mov.overview}</p>
+          
         </Card.Text>
-        <Button variant="primary">Watch it!</Button>
+        <Button variant="danger">Watch it!</Button>
       </Card.Body>
     </Card>
     </div>
