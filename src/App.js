@@ -4,6 +4,7 @@ import Navb from "./components/Navb";
 import { Row } from "react-bootstrap";
 import Movieslist from "./components/Movieslist";
 import axios from "axios";
+import Paginate from "./components/Paginate";
 
 
 
@@ -45,7 +46,7 @@ function App() {
     <Row>
     <Movieslist movies={movies}/>
     </Row>
-
+    <Paginate/>
     
     </div>
   );

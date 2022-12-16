@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 function Cardb({mov}) {
   return (
     <div className='mx-auto my-3'>
-    <Card style={{ width: '20rem' }}>
+    <Card style={{ width: '21rem' }}>
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/`+mov.poster_path} />
       <Card.Body>
         <Card.Title><div className='flex justify-between'>
