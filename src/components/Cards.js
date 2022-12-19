@@ -3,7 +3,8 @@ import Card from 'react-bootstrap/Card';
 import { Link} from "react-router-dom";
 
 
-function Cardb({mov,Data}) {
+function Cardb({mov}) {
+  
   return (
     <div className='mx-auto my-3'>
     <Card style={{ width: '21rem' }}>
@@ -19,7 +20,7 @@ function Cardb({mov,Data}) {
           <p className='max-h-fit text-gray-600'>{mov.overview}</p>
           
         </Card.Text>
-        <Link to={`/movie`}>
+        <Link to={`/movie/${mov.id}`}>
         <Button variant="danger">Watch it!</Button>
         </Link>
       </Card.Body>
