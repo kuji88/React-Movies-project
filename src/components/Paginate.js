@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate'
 
-const Paginate = () => {
-    const handlePageClick=()=>{
-
+const Paginate = ({pages,count}) => {
+    const handlePageClick=(data)=>{
+      pages(data.selected + 1)
     }
     const pageCount=500
   return (
@@ -12,7 +12,7 @@ const Paginate = () => {
         breakLabel="..."
         nextLabel="next"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={count}
         pageCount={pageCount}
         previousLabel="previous"
         renderOnZeroPageCount={null}

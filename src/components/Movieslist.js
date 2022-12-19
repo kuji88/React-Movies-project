@@ -1,8 +1,12 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
 import Cardb from './Cards'
-const Movieslist = ({movies}) => {
+import Paginate from './Paginate'
+
+
+const Movieslist = ({movies,pages,count}) => {
   return (
+    <div>
     <Col sm='12' className='flex flex-wrap'>
     
        {movies.length >= 1 ? (movies.map((mov)=>
@@ -10,7 +14,8 @@ const Movieslist = ({movies}) => {
        ))  : <h1 className='text-center m-auto p-14'>There's no Movies</h1>}
         
         </Col>
-     
+        <Paginate pages={pages} count={count}/>
+        </div>
   )
 }
 
