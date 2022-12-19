@@ -4,13 +4,14 @@ import Navb from "./components/Navb";
 import { Row } from "react-bootstrap";
 import Movieslist from "./components/Movieslist";
 import axios from "axios";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MovieD from "./components/MovieD";
 
 
 function App() {
 
   const [movies,setMovies] = useState([])
-  const [moviesPages,setPages] = useState([])
+  const [moviesPages,setPages] = useState(0)
 
 
   const getAllMovies= async ()=>{
@@ -51,10 +52,19 @@ function App() {
     <div>
     <Navb search={search}/>
     
-    <Row>
-    <Movieslist movies={movies} pages={getPages} count={moviesPages}/>
-    </Row>
 
+    <Row>
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Movieslist movies={movies} pages={getPages} count={moviesPages}/>}/>
+    
+
+    <Route path="/movie/:id" element={<MovieD/>}/>
+
+    </Routes>
+    </BrowserRouter>
+    </Row>
+    
     
     </div>
   );

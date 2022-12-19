@@ -1,11 +1,15 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link} from "react-router-dom";
 
-function Cardb({mov}) {
+
+function Cardb({mov,Data}) {
   return (
     <div className='mx-auto my-3'>
     <Card style={{ width: '21rem' }}>
+    <Link to={`/movie/${mov.id}`}>
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/`+mov.poster_path} />
+      </Link>
       <Card.Body>
         <Card.Title><div className='flex justify-between'>
         <h4>{mov.title}</h4>
@@ -15,7 +19,9 @@ function Cardb({mov}) {
           <p className='max-h-fit text-gray-600'>{mov.overview}</p>
           
         </Card.Text>
+        <Link to={`/movie`}>
         <Button variant="danger">Watch it!</Button>
+        </Link>
       </Card.Body>
     </Card>
     </div>
