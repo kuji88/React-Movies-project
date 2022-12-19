@@ -29,11 +29,11 @@ const MovieD = () => {
       <Col sm="8">
         <div className='text-center mt-20'>
         <h1 className='text-8xl'>Tittle: {movie.title}</h1>
-        <h5 className='mt-3'>Release Date: {movie.release_date}</h5>
-        <h3></h3>
-        <p className='mt-56 mx-auto w-7/12 text-slate-600'>Description: {movie.overview}</p>
+        <h5 className='mt-3'>{movie.release_date}</h5>
+        <h3 className='text-red-600 mt-4'>{movie.vote_average}</h3>
+        <p className='mt-28 mx-auto w-7/12 text-slate-600'>Description: {movie.overview}</p>
 
-        <div className='flex justify-between px-96 mt-56'>
+        <div className='flex justify-between px-96 mt-28'>
           <a href={movie.homepage}>
           <Button variant='danger'>Watch it</Button>
           </a>
